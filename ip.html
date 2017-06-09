@@ -41,8 +41,8 @@
 							<em id="freegeoip_net"></em>
 							</p>
 							
-							<p>https://freegeoip.net/json/<br/>
-							<em id="freegeoip_net"></em>
+							<p>https://ipapi.co/json/<br/>
+							<em id="ipapi_co"></em>
 							</p>
 						</div>
 						<footer>
@@ -70,6 +70,12 @@ $(document).ready(function () {
 	}).done(function (resp) {
 		$('#freegeoip_net').html(JSON.stringify(resp,null,'\t'));
 	});
+	$.ajax({
+		type: 'get', url: 'https://ipapi.co/json/',
+	}).done(function (resp) {
+		$('#ipapi_co').html(JSON.stringify(resp,null,'\t'));
+	});
+	
 });
 
 </script>
