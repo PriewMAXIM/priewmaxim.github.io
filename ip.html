@@ -44,6 +44,11 @@
 							<p>https://ipapi.co/json/<br/>
 							<em id="ipapi_co"></em>
 							</p>
+							
+							<p>https://ipinfo.io/json<br/>
+							<em id="ipinfo_io"></em>
+							</p>
+							
 						</div>
 						<footer>
 							<ul class="actions">
@@ -74,6 +79,12 @@ $(document).ready(function () {
 		type: 'get', url: 'https://ipapi.co/json/',
 	}).done(function (resp) {
 		$('#ipapi_co').html(JSON.stringify(resp,null,'\t'));
+	});
+	
+	$.ajax({
+		type: 'get', url: 'https://ipinfo.io/json',
+	}).done(function (resp) {
+		$('#ipinfo_io').html(JSON.stringify(resp,null,'\t'));
 	});
 	
 });
