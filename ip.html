@@ -37,7 +37,6 @@
 							<p>09.06.2017</p>
 						</header>
 						<div class="content">
-							<p>Current IP</p>
 							<p>https://freegeoip.net/json/<br/>
 							<em id="freegeoip_net"></em>
 							</p>
@@ -65,6 +64,17 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+<script>
+
+$(document).ready(function () {
+	$.ajax({
+		type: 'get', url: 'https://freegeoip.net/json/',
+	}).done(function (resp) {
+		$('#freegeoip_net').html(resp);
+	});
+});
+
+</script>
 
 	</body>
 </html>
