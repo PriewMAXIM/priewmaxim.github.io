@@ -65,7 +65,7 @@ $(document).ready(function () {
 	$.ajax({
 		type: 'get', url: 'https://freegeoip.net/json/',
 	}).done(function (resp) {
-		$('#freegeoip_net').text(JSON.stringify(resp));console.log(resp);
+		$('#freegeoip_net').html(JSON.stringify(resp));
 	});
 });
 
